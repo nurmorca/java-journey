@@ -1,0 +1,20 @@
+some type of exceptions:
+-- java.lang.Error:
+  -- indicates serious problem that a reasonable application 
+  -- should NOT try to catch!
+  -> internal jvm bugs, etc.
+  -> java.lang.UnsupportedClassVersionError: can happen when a code is
+     moved between different versions of IDE.
+     
+-- java.lang.RuntimeException:
+   -- mostly caused by buggy code.
+   -> java.lang.NullPointerException: we have tried to use an 
+      uninitialized object.
+   -> java.lang.IndexOutOfBoundsException: we have tried to access a
+      non-existent member of an array, etc.
+      
+-- java.io.IOException:
+   -- something went wrong during a file operation or a network operation.
+   -- these operations are always risky, so we must have an alternate plan
+      in case something goes wrong. if having an alternate plan is a must,
+      then the exception is determined as check.
